@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина — Parfum Shop</title>
+    <meta name="description" content="Ваша корзина покупок. Оформите заказ с доставкой по Узбекистану.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="contact-info">
+            <span>📞 +998 95 629 00 00</span>
+            <span>⏰ Ежедневно: 09:00–22:00</span>
+            <span>🚚 Бесплатная доставка от 500 000 сўм</span>
+        </div>
+        <div class="top-right">
+            <a class="top-social" href="https://www.instagram.com/anvarov_parfum/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.6" cy="6.4" r="1.4" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
+            <a class="top-social" href="https://t.me/anvarov_parfum" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 2.9 11.6c-1 .4-1 1.7.1 2l4.7 1.4 1.8 5.5c.3.9 1.4 1.1 2 .4l2.5-2.6 4.8 3.5c.8.6 1.9.2 2.1-.8l3.4-15.7c.2-1-.8-1.8-1.7-1.4zM8.7 14.7l9.4-5.8c.4-.3.9.3.5.6l-7.7 7-.3 3.2-1.9-5z"/></svg><span>Telegram</span></a>
+            <div class="lang-switch" role="group" aria-label="Язык">
+                <button type="button" data-lang="uz">УЗБ</button>
+                <button type="button" data-lang="ru" class="active">РУС</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container nav-container">
+            <a href="catalog.html" class="logo logo-img" aria-label="ANVAROV — каталог"><img src="images/logo.png" alt="ANVAROV Maison de Parfum"></a>
+
+            <nav class="nav-menu">
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="about.html">О нас</a>
+                <a href="contact.html">Контакты</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-icon" aria-label="Корзина">🛒<span class="cart-count">0</span></a>
+                <button class="mobile-menu-btn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="cart-page">
+        <div class="container">
+            <div class="cart-header">
+                <h2 style="font-size:26px; font-weight:700;">Ваша корзина</h2>
+                <a href="catalog.html" class="btn btn-outline">Продолжить покупки</a>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 360px; gap:30px;">
+                <div>
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th style="width:120px;">Изображение</th>
+                                <th>Товар</th>
+                                <th style="width:140px;">Цена</th>
+                                <th style="width:140px;">Кол-во</th>
+                                <th style="width:140px;">Сумма</th>
+                                <th style="width:100px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                            <!-- Товары корзины заполняются JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cart-summary">
+                    <h3>Итог заказа</h3>
+                    <div class="summary-row">
+                        <span>Товары</span>
+                        <span id="cart-subtotal">0 сўм</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Доставка</span>
+                        <span style="color:var(--accent-color); font-weight:600;">Бесплатно</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Итого</span>
+                        <span id="cart-total">0 сўм</span>
+                    </div>
+                    <button class="btn btn-primary checkout-btn" id="checkout-btn">Оформить заказ</button>
+                    <p style="margin-top:15px; font-size:13px; color:var(--text-gray); text-align:center;">
+                        При оформлении заказа с вами свяжется менеджер для уточнения деталей доставки.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модалка заказа -->
+    <div class="modal-overlay" id="order-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Оформление заказа</h3>
+                <button class="close-modal" id="close-order">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="order-form">
+                    <div class="form-group">
+                        <label>Ваше имя</label>
+                        <input type="text" name="customer-name" placeholder="Иван Иванов" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Телефон</label>
+                        <input type="tel" name="customer-phone" placeholder="+7 (999) 123-45-67" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Адрес доставки</label>
+                        <textarea name="customer-address" placeholder="Город, улица, дом, квартира" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Комментарий к заказу</label>
+                        <textarea name="customer-comment" placeholder="Пожелания по доставке (не обязательно)"></textarea>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="agree" id="agree" required>
+                        <label for="agree">
+                            Я согласен с <a href="#">условиями обработки персональных данных</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Подтвердить заказ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-brand"><img class="footer-logo" src="images/logo.png" alt="ANVAROV Maison de Parfum"></h3>
+                    <p>Интернет-магазин оригинальной парфюмерии от мировых брендов.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Каталог</h3>
+                    <ul>
+                        <li><a href="catalog.html?cat=women">Для женщин</a></li>
+                        <li><a href="catalog.html?cat=men">Для мужчин</a></li>
+                        <li><a href="catalog.html?cat=unisex">Унисекс</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Покупателям</h3>
+                    <ul>
+                        <li><a href="contact.html">Доставка и оплата</a></li>
+                        <li><a href="contact.html">Обратная связь</a></li>
+                    </ul>
+                </div>
+            </div>
+                    <div class="footer-socials">
+                <a href="https://www.instagram.com/anvarov_parfum/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.6" cy="6.4" r="1.4" fill="currentColor" stroke="none"/></svg>Instagram</a>
+                <a href="https://t.me/anvarov_parfum" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 2.9 11.6c-1 .4-1 1.7.1 2l4.7 1.4 1.8 5.5c.3.9 1.4 1.1 2 .4l2.5-2.6 4.8 3.5c.8.6 1.9.2 2.1-.8l3.4-15.7c.2-1-.8-1.8-1.7-1.4zM8.7 14.7l9.4-5.8c.4-.3.9.3.5.6l-7.7 7-.3 3.2-1.9-5z"/></svg>Telegram</a>
+                <a href="https://yandex.ru/maps/org/anvarov_parfum/214442855638/" target="_blank" rel="noopener">📍 Яндекс Карты</a>
+            </div>
+    <div class="footer-bottom">
+                <span>© 2026 ANVAROV Maison de Parfum. Все права защищены.</span>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast">
+        <span style="font-weight:600;">✓</span><span></span>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ai.js"></script>
+    <script>
+        // Инициализация корзины при загрузке страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCart();
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>

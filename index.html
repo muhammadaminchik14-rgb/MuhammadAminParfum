@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parfum Shop — интернет-магазин парфюмерии</title>
+    <meta name="description" content="Купить оригинальные духи от мировых брендов с доставкой по Узбекистану. Широкая коллекция женской, мужской и унисекс парфюмерии.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+    <!-- Верхняя панель -->
+    <div class="top-bar">
+        <div class="contact-info">
+            <span>📞 +998 95 629 00 00</span>
+            <span>⏰ Ежедневно: 09:00–22:00</span>
+            <span>🚚 Бесплатная доставка от 500 000 сўм</span>
+        </div>
+        <div class="top-right">
+            <a class="top-social" href="https://www.instagram.com/anvarov_parfum/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.6" cy="6.4" r="1.4" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
+            <a class="top-social" href="https://t.me/anvarov_parfum" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 2.9 11.6c-1 .4-1 1.7.1 2l4.7 1.4 1.8 5.5c.3.9 1.4 1.1 2 .4l2.5-2.6 4.8 3.5c.8.6 1.9.2 2.1-.8l3.4-15.7c.2-1-.8-1.8-1.7-1.4zM8.7 14.7l9.4-5.8c.4-.3.9.3.5.6l-7.7 7-.3 3.2-1.9-5z"/></svg><span>Telegram</span></a>
+            <div class="lang-switch" role="group" aria-label="Язык">
+                <button type="button" data-lang="uz">УЗБ</button>
+                <button type="button" data-lang="ru" class="active">РУС</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container nav-container">
+            <a href="catalog.html" class="logo logo-img" aria-label="ANVAROV — каталог"><img src="images/logo.png" alt="ANVAROV Maison de Parfum"></a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="active">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="about.html">О нас</a>
+                <a href="contact.html">Контакты</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Поиск ароматов...">
+                </div>
+                <a href="cart.html" class="cart-icon" aria-label="Корзина">🛒<span class="cart-count">0</span></a>
+                <button class="mobile-menu-btn" aria-label="Меню">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <h1>Искусство аромата<br>в каждом флаконе</h1>
+            <p>Оригинальная парфюмерия от мировых домов моды. Chanel, Dior, Tom Ford, Gucci и многие другие с доставкой по всему Узбекистану.</p>
+            <div class="hero-actions">
+                <a href="catalog.html" class="btn btn-primary">Каталог ароматов</a>
+                <a href="contact.html" class="btn btn-outline">Связаться с нами</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Категории -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Категории парфюмерии</h2>
+                <p>Выберите свой идеальный аромат</p>
+            </div>
+            <div class="categories-grid">
+                <a href="catalog.html?cat=women" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1592914610354-fd354ea45e48?q=80&w=800&auto=format&fit=crop" alt="Женская парфюмерия" onerror="imgFallback(this)">
+                    <div class="category-info">
+                        <h3>Для женщин</h3>
+                        <p>Нежные цветочные и фруктовые ноты</p>
+                    </div>
+                </a>
+                <a href="catalog.html?cat=men" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1619994403073-2cec844b8e63?q=80&w=800&auto=format&fit=crop" alt="Мужская парфюмерия" onerror="imgFallback(this)">
+                    <div class="category-info">
+                        <h3>Для мужчин</h3>
+                        <p>Свежие древесные и пряные ароматы</p>
+                    </div>
+                </a>
+                <a href="catalog.html?cat=unisex" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=800&auto=format&fit=crop" alt="Унисекс парфюмерия" onerror="imgFallback(this)">
+                    <div class="category-info">
+                        <h3>Унисекс</h3>
+                        <p>Универсальные ароматы для всех</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Хиты продаж -->
+    <section class="products" style="padding-top:40px;">
+        <div class="container">
+            <div class="products-header">
+                <div>
+                    <h2 style="font-size:28px; font-weight:700; margin-bottom:8px;">Популярные ароматы</h2>
+                    <p style="color:var(--text-gray);">Лидеры продаж этого месяца</p>
+                </div>
+                <a href="catalog.html" class="btn btn-outline">Все товары →</a>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- Товары заполняются JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Атрибуты / Преимущества -->
+    <section class="product-attributes">
+        <div class="container">
+            <div class="attributes-grid">
+                <div class="attr-item">
+                    <span class="attr-icon">🚚</span>
+                    <div class="attr-text"><strong>Быстрая доставка</strong><span>От 1 дня по Ташкенту и регионам</span></div>
+                </div>
+                <div class="attr-item">
+                    <span class="attr-icon">✅</span>
+                    <div class="attr-text"><strong>Оригинальное качество</strong><span>Все парфюмы с сертификатами</span></div>
+                </div>
+                <div class="attr-item">
+                    <span class="attr-icon">💳</span>
+                    <div class="attr-text"><strong>Оплата любым способом</strong><span>Карта, наличные, онлайн</span></div>
+                </div>
+                <div class="attr-item">
+                    <span class="attr-icon">🤝</span>
+                    <div class="attr-text"><strong>Поддержка 24/7</strong><span>Поможем выбрать аромат</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги: букеты и упаковка -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Услуги и подарки</h2>
+                <p>Соберём ваш вечер целиком — от аромата до упаковки</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?q=80&w=900&auto=format&fit=crop" alt="Букет живых цветов" onerror="imgFallback(this)">
+                    <div class="service-info">
+                        <h3>💐 Букеты с цветами</h3>
+                        <p>Парфюм + живые цветы к вашему вечеру. Подберём букет под аромат и повод — от романтического свидания до торжества.</p>
+                        <a href="contact.html" class="service-link">Заказать букет →</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?q=80&w=900&auto=format&fit=crop" alt="Подарочная упаковка" onerror="imgFallback(this)">
+                    <div class="service-info">
+                        <h3>🎁 Упаковка · 32 варианта</h3>
+                        <p>Подарочные упаковки: коробки, боксы, ленты, открытки. Цена добавляется к заказу — отметьте в комментарии.</p>
+                        <a href="contact.html" class="service-link">Выбрать упаковку →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Почему мы -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Почему мы?</h2>
+                <p>10 причин выбрать именно наш магазин</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <span class="why-icon">🏆</span>
+                    <h4>Подлинный аромат</h4>
+                    <p>Каждый флакон — из проверенных источников: сертификаты, честное происхождение и ни одного компромисса с качеством</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-icon">📅</span>
+                    <h4>История с 13 октября 2022</h4>
+                    <p>Первый бутик открылся в Миноре в Ташкенте — с тех пор мы выросли до четырёх магазинов, но любовь к ароматам осталась прежней</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-icon">🏬</span>
+                    <h4>Четыре адреса в Ташкенте</h4>
+                    <p>Буюк Ипак Йули, 58 и 105В · Мирзо Улугбека, 60 · Сергели-2 — всегда есть бутик рядом с вами</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-icon">💡</span>
+                    <h4>Личный консультант</h4>
+                    <p>Не просто продавец, а знаток ароматов: подберёт ноты под ваш характер, сезон и повод</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-icon">🧴</span>
+                    <h4>Живое знакомство с ароматом</h4>
+                    <p>Тестеры в каждом магазине: нанесите аромат на кожу, поживите с ним полчаса — и только потом решайте</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-icon">🚚</span>
+                    <h4>Доставка на следующий день</h4>
+                    <p>По Ташкенту — за один день, по всему Узбекистану — 1–2 дня. Бесплатно при заказе от 500 000 сўм</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-icon">💳</span>
+                    <h4>Оплата, как вам удобно</h4>
+                    <p>Наличные, карта, Payme или Click — платите при получении или онлайн, как привычнее вам</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-icon">💐</span>
+                    <h4>Парфюм и живые цветы</h4>
+                    <p>Соберём букет под ваш аромат и повод — красивый вечер начинается с деталей</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-icon">🎁</span>
+                    <h4>Упаковка на любой вкус</h4>
+                    <p>32 варианта коробок, боксов, лент и открыток — подарок будет готов к вручению</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-icon">🔄</span>
+                    <h4>14 дней на обмен</h4>
+                    <p>Если аромат не стал вашим — обменяем или вернём деньги без лишних вопросов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Наш магазин -->
+    <section class="store-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наш магазин</h2>
+                <p>Наши бутики в Ташкенте — изнутри и снаружи</p>
+            </div>
+            <div class="store-grid">
+                <figure class="store-shot">
+                    <img src="images/store-interior.png" alt="Внутри магазина ANVAROV" loading="lazy">
+                    <figcaption>Внутри бутика</figcaption>
+                </figure>
+                <figure class="store-shot">
+                    <img src="images/store-exterior.png" alt="Магазин ANVAROV снаружи" loading="lazy">
+                    <figcaption>Наш вход</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы клиентов -->
+    <section class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>Отзывы клиентов</h2>
+                <p>Имя, звёзды и слова — расскажите о своём опыте</p>
+            </div>
+            <div class="reviews-grid" id="reviews-list"></div>
+            <form class="review-form" id="review-form">
+                <h3>Оставить отзыв</h3>
+                <div class="review-form-row">
+                    <input type="text" id="rv-name" placeholder="Ваше имя" required maxlength="40">
+                    <div class="star-picker" id="star-picker" role="radiogroup" aria-label="Оценка">
+                        <button type="button" class="star-btn" data-star="1" aria-label="1 звезда">★</button>
+                        <button type="button" class="star-btn" data-star="2" aria-label="2 звезды">★</button>
+                        <button type="button" class="star-btn" data-star="3" aria-label="3 звезды">★</button>
+                        <button type="button" class="star-btn" data-star="4" aria-label="4 звезды">★</button>
+                        <button type="button" class="star-btn" data-star="5" aria-label="5 звёзд">★</button>
+                    </div>
+                </div>
+                <textarea id="rv-text" placeholder="Ваши слова о магазине..." required maxlength="500"></textarea>
+                <button type="submit" class="btn btn-primary">Отправить отзыв</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Видео Instagram -->
+    <section class="ig-video">
+        <div class="container">
+            <div class="section-header">
+                <h2>Мы в Instagram</h2>
+                <p>Свежие видео и новинки @anvarov_parfum</p>
+            </div>
+            <div class="ig-embed">
+                <iframe src="https://www.instagram.com/p/Dd9L0SZsA7-/embed/" title="Instagram видео ANVAROV" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <a class="ig-link" href="https://www.instagram.com/p/Dd9L0SZsA7-/" target="_blank" rel="noopener">Смотреть в Instagram →</a>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-brand"><img class="footer-logo" src="images/logo.png" alt="ANVAROV Maison de Parfum"></h3>
+                    <p>Интернет-магазин оригинальной парфюмерии от мировых брендов. Широкий ассортимент, низкие цены и быстрая доставка.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Каталог</h3>
+                    <ul>
+                        <li><a href="catalog.html?cat=women">Для женщин</a></li>
+                        <li><a href="catalog.html?cat=men">Для мужчин</a></li>
+                        <li><a href="catalog.html?cat=unisex">Унисекс</a></li>
+                        <li><a href="catalog.html">Новинки</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Покупателям</h3>
+                    <ul>
+                        <li><a href="contact.html">Доставка и оплата</a></li>
+                        <li><a href="#">Возврат товара</a></li>
+                        <li><a href="#">Оптовые закупки</a></li>
+                        <li><a href="contact.html">Обратная связь</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-newsletter">
+                    <h3>Подписка на новости</h3>
+                    <p>Получайте уведомления о новых ароматах и скидках</p>
+                    <input type="email" id="news-email" placeholder="Ваш email" autocomplete="email">
+                    <button class="btn btn-primary" id="news-btn" style="width:100%; padding:12px;">Подписаться</button>
+                    <small id="news-msg" class="news-msg" role="status" aria-live="polite"></small>
+                </div>
+            </div>
+                    <div class="footer-socials">
+                <a href="https://www.instagram.com/anvarov_parfum/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.6" cy="6.4" r="1.4" fill="currentColor" stroke="none"/></svg>Instagram</a>
+                <a href="https://t.me/anvarov_parfum" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 2.9 11.6c-1 .4-1 1.7.1 2l4.7 1.4 1.8 5.5c.3.9 1.4 1.1 2 .4l2.5-2.6 4.8 3.5c.8.6 1.9.2 2.1-.8l3.4-15.7c.2-1-.8-1.8-1.7-1.4zM8.7 14.7l9.4-5.8c.4-.3.9.3.5.6l-7.7 7-.3 3.2-1.9-5z"/></svg>Telegram</a>
+                <a href="https://yandex.ru/maps/org/anvarov_parfum/214442855638/" target="_blank" rel="noopener">📍 Яндекс Карты</a>
+            </div>
+    <div class="footer-bottom">
+                <span>© 2026 ANVAROV Maison de Parfum. Все права защищены.</span>
+                <span>Разработано с ❤️</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Уведомление -->
+    <div class="toast" id="toast">
+        <span style="font-weight:600;">✓</span><span></span>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ai.js"></script>
+</body>
+</html>
